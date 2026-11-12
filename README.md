@@ -1,9 +1,4 @@
-# FRB-Sim
 
-Simulation code for Section XI of the paper
-
-> P. R. K and S. Vairavasundaram, "Bridging the Lab-to-Field Gap in Physical Security of Lattice-Based
-> Post-Quantum Cryptography for IoT Devices: A Systematic Review," manuscript under review, 2026.
 
 ## Overview
 
@@ -119,10 +114,4 @@ The traces are generated from an algorithm-level Hamming-weight model, not measu
 show how deployment conditions scale the cost of the attack relative to the laboratory. They are not absolute
 trace counts for a particular device.
 
-## Citation
 
-If you use this code, please cite the paper above.
-
-## License
-
-This project is licensed under the MIT License, see [LICENSE](LICENSE).
