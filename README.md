@@ -30,9 +30,7 @@ Benchmarking (FRB) framework proposed in the paper.
 | Field tier | SH50, AR200 (variance 36), SNR 1 and one sample per clock |
 | Countermeasures | shuffling of 16 operations, and shuffling with a random delay of 0-15 clock cycles |
 
-The attacker adapts to each condition by summing the samples of each clock period and, for desynchronised
-traces, integrating over the expected spread of the target. The source of every parameter is given in the
-docstring of `frbsim/leakage.py` and in Table 19 of the paper.
+
 
 ## Repository structure
 
@@ -58,7 +56,6 @@ pip install numpy==2.1.3
 
 ## Usage
 
-From the repository folder:
 
 ```bash
 python -m frbsim.experiments <output.json> [repetitions] [workers]
@@ -70,7 +67,7 @@ python -m frbsim.experiments <output.json> [repetitions] [workers]
 | `repetitions` | independent experiments per condition, each with a new random key | 100 |
 | `workers` | parallel processes | all CPU cores |
 
-Example with the settings used in the paper:
+The setting used in our work:
 
 ```bash
 python -m frbsim.experiments results.json 500 32
@@ -85,8 +82,8 @@ Each condition is printed as it finishes, for example
 and the results file is updated after every condition. The laboratory noise level can be changed with the
 environment variable `FRB_SIGMA_LAB` (default 12.0).
 
-**Run time.** The 500-repetition run in the paper took about 1.5 hours on a 32-core server. The field tier
-needs up to 300,000 traces per experiment and is the slowest job.
+**Run time.** The 500-repetition run in our work for about 1.5 hours on a 32-core server. The field tier
+needs up to 300,000 traces per experiment.
 
 **Reproducibility.** The random seeds are fixed (base seed 4040, one seed per condition), so a run with
 500 repetitions and the same NumPy version gives the N90 values and confidence intervals reported in the paper.
